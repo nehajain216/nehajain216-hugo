@@ -1,0 +1,35 @@
+baseurl = "https://nehajain216.github.io/"
+title = "Neha Tech Blog"
+languageCode = "en-us"
+paginate = "10" # Number of posts per page
+theme = "mainroad"
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+
+[[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "home"
+    url = "/"
+
+[Author]
+    name = "Neha Jain"
+    bio = "Neha is a software developer working as a freelancer."
+    avatar = "img/avatar.png"
+
+
+[Params]
+    subtitle = "My blog about technology and everything else." # Subtitle of your site
+    description = "Neha's Personal blog about everything" # Description of your site
+    opengraph = true
+    leftsidebar = false # Move sidebar to the left side if true
+    authorbox = true
+    post_navigation = true
+
+
+[Params.widgets]
+    search = true # Enable "Search" widget
+    recent_articles = true # Enable "Recent arcticles" widget
+    categories = true # Enable "Categories" widget
+    tags = true # Enable "Tags" widget
