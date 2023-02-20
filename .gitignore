@@ -2,4 +2,8 @@
 .settings
 .idea
 .iml
+.hugo_build.lock
 public
+backup
+themes/tranquilpeak/exampleSite
+
