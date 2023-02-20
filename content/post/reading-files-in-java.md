@@ -1,16 +1,15 @@
-+++
-title = "Multiple ways of reading a File in Java"
-description = "Multiple ways of reading a File in Java"
-tags = [
-    "Java",
-]
-date = "2017-11-18T15:05:00+05:30"
-categories = [
-    "Java",
-]
-thumbnail = "img/files.jpg"
-+++
-
+---
+title: "Multiple ways of reading a File in Java"
+thumbnailImagePosition: left
+thumbnailImage: /images/files.jpg
+coverImage: /images/files.jpg
+metaAlignment: center
+coverMeta: out
+date: 2017-11-20
+draft: false
+categories:
+- java
+---
 
 ### Reading a file line by line from File system path using Reader as character stream
 

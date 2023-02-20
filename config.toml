@@ -45,14 +45,14 @@ startLevel = 1
 # ------
 [author]
 name = "Neha Jain"
-bio = "A passionate techie"
+bio = "A Software Quality Engineer with a detail-oriented, and a strong problem-solving mindset."
 job = "Quality Engineer"
 location = "India"
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-gravatarEmail = "neha.jain216@gmail.com"
+#gravatarEmail = "neha.jain216@gmail.com"
 # Your profile picture
 # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+picture = "/images/Neha.jpeg"
 # Your Twitter username without the @. E.g : thibaudlepretre
 # twitter = "thibaudlepretre"
 # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
@@ -144,7 +144,7 @@ syntaxHighlighter = "highlight.js"
 #  keywords = ["development", "next-gen"]
 
 # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
-clearReading = true
+clearReading = false
 
 # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
 # If false it will flat categories.
