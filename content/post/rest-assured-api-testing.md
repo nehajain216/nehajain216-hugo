@@ -244,7 +244,8 @@ Using **when()** we are sending delete() request with endpoint URL and path vari
 Using **then()** we are verifying the response
 
 
-Use additional methods provided by REST Assured to test other aspects of the API, such as response headers, response body, and response time.
+Use additional methods provided by [REST Assured](https://rest-assured.io/ "rest-assured.io") to test other aspects of the API, such as response headers, response body, and response time.
+
 
 ### Conclusion:
 We have just explored the basic steps to get started with REST Assured testing. As you become more familiar with the library, you can use additional features such as authentication, request and response filters, and response specifications to create more advanced test cases.
