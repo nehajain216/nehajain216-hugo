@@ -6,7 +6,7 @@ coverImage: /images/rest-assured.png
 metaAlignment: center
 coverMeta: out
 date: 2023-03-08
-draft: true
+draft: false
 categories:
 - qa
 - testing
