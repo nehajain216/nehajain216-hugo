@@ -1,8 +1,8 @@
 ---
 title: "Getting Started With REST Assured for API Testing"
 thumbnailImagePosition: left
-thumbnailImage: /images/rest-assured.jpeg
-coverImage: /images/rest-assured.jpeg
+thumbnailImage: /images/rest-assured-logo.png
+coverImage: /images/rest-assured.png
 metaAlignment: center
 coverMeta: out
 date: 2023-03-08
@@ -53,22 +53,25 @@ Here's a simple example:
 
 ### Step 1: Add Rest assured dependencies 
 
-First, let's create a new Maven project in Eclipse or IntelliJ IDEA. Once the project is created, add the following dependency to the pom.xml file:
+First, let's create a new Maven project in Eclipse or IntelliJ IDEA. Once the project is created, 
+add the following dependencies to the **pom.xml** file:
 
-```shell
-<dependency>
-    <groupId>io.rest-assured</groupId>
-    <artifactId>rest-assured</artifactId>
-    <version>5.3.0</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.9.2</version>
-    <scope>test</scope>
-</dependency>
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>5.3.0</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.9.2</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
 ```
 This will import Rest Assured and Junit into our project.
 
@@ -82,15 +85,15 @@ public class ExampleAPITest {
     void testStatusCode() {
         given()
             .when()
-                .get("http://example.com/api/users")
+                .get("https://jsonplaceholder.typicode.com/users")
             .then()
                 .statusCode(200);
     }
 }
 ```
 
-In this example, we're making a GET request to the "http://example.com/api/users" endpoint and checking 
-that the response has a status code of 200. The ```given()``` method sets up the request, and the ```then()``` method checks the 
+In this example, we're making a GET request to the https://jsonplaceholder.typicode.com/users endpoint and checking 
+that the response has a status code of 200. The `given()` method sets up the request, and the `then()` method checks the 
 response.
 
 ### Step 3: Run the API test
@@ -101,57 +104,52 @@ Let's explore the basic HTTP methods - **GET, PUT, POST, and DELETE**
 
 We will use the following endpoints for our API testing:
 
-* POST: /api/users
-* GET: /api/users/{userId}
-* PUT: /api/users/{userId}
-* DELETE: /api/users/{userId}
+* POST: /users
+* GET: /users/{userId}
+* PUT: /users/{userId}
+* DELETE: /users/{userId}
 
 
 ### POST Method:
-The POST method is used to create a new resource on the server.
+The **POST** method is used to create a new resource on the server.
 
 To test the POST method, we need to send a request to create a new user. We will use the given URL and JSON payload.
 
-**URL:** https://example.com/api/users
+**URL:** https://jsonplaceholder.typicode.com/users
 
 **JSON Payload:** 
 ```
 {
     "name": "Smith", 
     "email": "smith@example.com", 
-    "age": "23"
+    "username": "smith"
 }
 ```
+
 ```java
 @Test
 void shouldCreateUser() {
         given()
             .contentType("application/json")
-            .body("{\"name\": \"Smith\", \"email\": \"smith@example.com\", \"age\": \"23\"}")
+            .body("{\"name\": \"Smith\", \"email\": \"smith@example.com\", \"username\": \"smith\"}")
         .when()
-            .post("https://example.com/api/users")
+            .post("https://jsonplaceholder.typicode.com/users")
         .then()
             .statusCode(201)
             .body("name" equalTo("Smith"))
             .body("email" equalTo("smith@example.com"))
-            .body("age" equalTo("23"))
+            .body("username" equalTo("smith"))
         ;
 }
 ```
-We are using the given(), when(), and then() methods provided by REST Assured. 
-
-Using **given()** we are setting the content type and request body
-
-Using **when()** we are sending the post() request with endpoint URL and 
-
-Using **then()** we are verifying the response
+We are using the `given()`, `when()`, and `then()` methods provided by REST Assured. 
 
 ### GET Method:
-The GET method is used to retrieve information from the server.
+The **GET** method is used to retrieve information from the server.
 
 To test the GET method, we need to retrieve user information using the given URL and user ID.
 
-**URL:** https://example.com/api/users/{userId}
+**URL:** https://jsonplaceholder.typicode.com/users/{userId}
 
 ```java
 @Test
@@ -159,36 +157,30 @@ void shouldGetUserById() {
         given()
             .contentType("application/json")
         .when()
-            .get("https://example.com/api/users/{userId}",1)
+            .get("https://jsonplaceholder.typicode.com/users/{userId}",1)
         .then()
             .statusCode(201)
             .body("name" equalTo("Smith"))
             .body("email" equalTo("smith@example.com"))
-            .body("age" equalTo("23"))
+            .body("username" equalTo("smith"))
         ;
 }
 ```
-We are using the given(), when(), and then() methods provided by REST Assured.
 
-Using **given()** we are setting the content type
-
-Using **when()** we are sending the get() request with endpoint URL and path variable(s)
-
-Using **then()** we are verifying the response
 
 ### PUT Method:
-The PUT method is used to update an existing resource on the server.
+The **PUT** method is used to update an existing resource on the server.
 
 To test the PUT method, we need to update user information using the given URL and user ID.
 
-**URL:** https://example.com/api/users/{userId}
+**URL:** https://jsonplaceholder.typicode.com/users/{userId}
 
 **JSON Payload:** 
 ```
 {
     "name": "Smith Rich", 
     "email": "smith.rich@example.com", 
-    "age": "26"
+    "username": "smith"
 }
 ```
 
@@ -197,31 +189,24 @@ To test the PUT method, we need to update user information using the given URL a
 void shouldUpdateUser() {
         given()
             .contentType("application/json")
-            .body("{\"name\": \"Smith Rich\", \"email\": \"smith.rich@example.com\", \"age\": \"26\"}")
+            .body("{\"name\": \"Smith\", \"email\": \"smith@example.com\", \"username\": \"smith\"}")
         .when()
-            .put("https://example.com/api/users/{userId}",1)
+            .put("https://jsonplaceholder.typicode.com/users/{userId}",1)
         .then()
             .statusCode(200)
             .body("name" equalTo("Smith Rich"))
             .body("email" equalTo("smith.rich@example.com"))
-            .body("age" equalTo("26"))
+            .body("username" equalTo("smith"))
         ;
 }
 ```
-We are using the given(), when(), and then() methods provided by REST Assured.
-
-Using **given()** we are setting the content type and request body
-
-Using **when()** we are sending the put() request with endpoint URL and path variable(s)
-
-Using **then()** we are verifying the response
 
 ### DELETE Method:
-The DELETE method is used to remove information from the server.
+The **DELETE** method is used to remove information from the server.
 
 To test the DELETE method, we need to delete user information using the given URL and user ID.
 
-**URL:** https://example.com/api/users/{userId}
+**URL:** https://jsonplaceholder.typicode.com/users/{userId}
 
 ```java
 @Test
@@ -229,23 +214,17 @@ void shouldDeleteUser() {
         given()
             .contentType("application/json")
         .when()
-            .delete("https://example.com/api/users/{userId}",1)
+            .delete("https://jsonplaceholder.typicode.com/users/{userId}",1)
         .then()
             .statusCode(200)
         ;
 }
 ```
-We are using the given(), when(), and then() methods provided by REST Assured.
 
-Using **given()** we are setting the content type
-
-Using **when()** we are sending delete() request with endpoint URL and path variable(s)
-
-Using **then()** we are verifying the response
+Use additional methods provided by [REST Assured](https://rest-assured.io/ "rest-assured.io") to test other aspects of the API, 
+such as response headers, response body, and response time.
 
 
-Use additional methods provided by [REST Assured](https://rest-assured.io/ "rest-assured.io") to test other aspects of the API, such as response headers, response body, and response time.
-
-
-### Conclusion:
-We have just explored the basic steps to get started with REST Assured testing. As you become more familiar with the library, you can use additional features such as authentication, request and response filters, and response specifications to create more advanced test cases.
+### Conclusion
+We have just explored the basic steps to get started with REST Assured testing. As you become more familiar with the library, 
+you can use additional features such as authentication, request and response filters, and response specifications to create more advanced test cases.
