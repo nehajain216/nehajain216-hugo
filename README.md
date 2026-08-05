@@ -1,6 +1,9 @@
-# Neha Jain Blog
+# Neha Tech Blog
 
 Netlify URL: https://nehajain.netlify.app/
+
+## Prerequisites
+- Hugo 164 or later
 
 ## Local Development
 
