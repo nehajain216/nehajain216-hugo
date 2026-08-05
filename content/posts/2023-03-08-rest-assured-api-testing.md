@@ -4,7 +4,7 @@ date: 2023-03-08
 description: "Learn the benefits of REST Assured for API testing and how to start automating REST API checks."
 categories: ["QA"]
 tags: ["QA", "Testing", "REST Assured", "API", "Automation"]
-image: "/images/rest-assured.png"
+image: "/images/start-restassured.png"
 readTime: "5 min read"
 ---
 

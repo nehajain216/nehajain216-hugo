@@ -4,7 +4,7 @@
   {{ $paginator := .Paginate $posts }}
   <main class="container content-with-sidebar">
     <section>
-      <div class="post-grid">{{ range $paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}</div>
+      <div class="post-grid home-post-grid">{{ range $paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}</div>
       {{ partial "pagination.html" . }}
     </section>
     {{ partial "sidebar.html" . }}

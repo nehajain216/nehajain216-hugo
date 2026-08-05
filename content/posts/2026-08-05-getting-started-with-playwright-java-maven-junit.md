@@ -4,7 +4,7 @@ date: 2026-08-05
 description: "Learn how to set up Playwright with Java, Maven and JUnit, then write a first browser navigation test."
 categories: ["QA"]
 tags: ["QA", "Testing", "Playwright", "Java", "Maven", "JUnit", "Automation"]
-image: "/images/cover-image.png"
+image: "/images/start-playwright.png"
 readTime: "4 min read"
 ---
 
