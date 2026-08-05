@@ -1,11 +1,19 @@
 {
-  "name": "examplesite",
+  "name": "nehajain216-hugo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Neha Tech Blog",
   "scripts": {
     "start": "hugo server --minify"
   },
-  "keywords": [],
-  "author": "SivaLabs",
+  "keywords": [
+    "blog",
+    "testing",
+    "quality-analyst",
+    "java",
+    "selenium",
+    "playwright",
+    "cypress"
+  ],
+  "author": "Neha Jain",
   "license": "MIT"
 }
