@@ -1,6 +1,30 @@
 {{ define "main" }}
   {{ partial "hero.html" . }}
   <main class="container contact-page">
-    <section class="contact-card"><div class="contact-copy"><h2>Contact Information</h2><h3>Email</h3><p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p><h3>Location</h3><p>{{ site.Params.location }}</p><h3>Follow Us</h3><p><a href="{{ site.Params.twitter }}">Twitter</a> · <a href="{{ site.Params.github }}">GitHub</a> · <a href="{{ site.Params.linkedin }}">LinkedIn</a> · <a href="{{ site.Params.youtube }}">YouTube</a></p></div></section>
+    <section class="contact-card">
+      <div class="contact-copy">
+        <h2>Contact Information</h2>
+        <h3>Email</h3>
+        <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+        <h3>Location</h3>
+        <p>{{ site.Params.location }}</p>
+        {{ $socialLinks := slice
+          (dict "name" "Twitter" "url" site.Params.twitter)
+          (dict "name" "GitHub" "url" site.Params.github)
+          (dict "name" "LinkedIn" "url" site.Params.linkedin)
+          (dict "name" "YouTube" "url" site.Params.youtube)
+        }}
+        {{ $visibleLinks := where $socialLinks "url" "ne" "" }}
+        {{ with $visibleLinks }}
+          <h3>Follow Us</h3>
+          <p>
+            {{- range $index, $link := . -}}
+              {{- if $index }} · {{ end -}}
+              <a href="{{ $link.url }}">{{ $link.name }}</a>
+            {{- end -}}
+          </p>
+        {{ end }}
+      </div>
+    </section>
   </main>
 {{ end }}
