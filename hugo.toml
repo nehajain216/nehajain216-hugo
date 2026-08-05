@@ -1,0 +1,41 @@
+baseURL = "https://nehajain.netlify.app/"
+locale = "en-us"
+title = "Neha Tech Blog"
+theme = "hugo-tech-blog-classic-theme"
+
+[pagination]
+  pagerSize = 6
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  description = "My learnings on software development, and testing."
+  author = "Neha Jain"
+  authorBio = "Software Quality Analyst. I write about Java, Selenium, Playwright, Cypress"
+  email = "neha.jain216@gmail.com"
+  location = "Hyderabad, India"
+  twitter = "https://twitter.com/nehajain_216"
+  github = "https://github.com/nehajain216"
+  linkedin = "https://linkedin.com/in/nehajain216"
+  youtube = ""
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "Categories"
+  pageRef = "/categories"
+  weight = 20
+
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 30
+
+[markup.highlight]
+  noClasses = false
+  style = "github-dark"

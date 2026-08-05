@@ -1,0 +1,10 @@
+/* Generated using: hugo gen chromastyles --style github-dark */
+.bg,.chroma { color:#e6edf3; background-color:#0d1117; }
+.chroma { -webkit-text-size-adjust:none; }
+.chroma .err { color:#f85149 }.chroma .lnlinks { outline:none; text-decoration:none; color:inherit }
+.chroma .lntd { vertical-align:top; padding:0; margin:0; border:0 }.chroma .lntable { border-spacing:0; padding:0; margin:0; border:0 }
+.chroma .hl { background-color:#6e7681 }.chroma .lnt,.chroma .ln { white-space:pre; -webkit-user-select:none; user-select:none; margin-right:.4em; padding:0 .4em; color:#6e7681 }.chroma .line { display:flex }
+.chroma .k,.chroma .kd,.chroma .kn,.chroma .kr,.chroma .kt { color:#ff7b72 }.chroma .kc,.chroma .kp,.chroma .no,.chroma .nl,.chroma .py,.chroma .nv,.chroma .vc,.chroma .vg,.chroma .vi,.chroma .vm,.chroma .ld,.chroma .sa,.chroma .se,.chroma .sh,.chroma .sr,.chroma .gh,.chroma .gu { color:#79c0ff }
+.chroma .nc,.chroma .ne { color:#f0883e; font-weight:bold }.chroma .nd,.chroma .nf,.chroma .fm { color:#d2a8ff; font-weight:bold }.chroma .ni { color:#ffa657 }.chroma .nn { color:#ff7b72 }.chroma .nx { color:#e6edf3 }.chroma .nt { color:#7ee787 }
+.chroma .l,.chroma .s,.chroma .sd,.chroma .s2,.chroma .s1,.chroma .si,.chroma .sx,.chroma .ss,.chroma .m,.chroma .mb,.chroma .mf,.chroma .mh,.chroma .mi,.chroma .il,.chroma .mo { color:#a5d6ff }.chroma .o,.chroma .ow { color:#ff7b72; font-weight:bold }
+.chroma .c,.chroma .ch,.chroma .cm,.chroma .c1,.chroma .cp,.chroma .cpf { color:#8b949e; font-style:italic }.chroma .cs { color:#8b949e; font-weight:bold; font-style:italic }.chroma .gd { color:#ffa198; background-color:#490202 }.chroma .ge { font-style:italic }.chroma .gr { color:#ffa198 }.chroma .gi { color:#56d364; background-color:#0f5323 }.chroma .go,.chroma .gp { color:#8b949e }.chroma .gs { font-weight:bold }.chroma .gt { color:#ff7b72 }.chroma .gl { text-decoration:underline }.chroma .w { color:#6e7681 }

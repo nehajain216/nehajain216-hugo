@@ -1,0 +1,11 @@
+{
+  "name": "examplesite",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "hugo server --minify"
+  },
+  "keywords": [],
+  "author": "SivaLabs",
+  "license": "MIT"
+}

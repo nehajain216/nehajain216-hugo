@@ -1,0 +1,8 @@
+<article class="post-card">
+  <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ .Params.image }}" alt="" loading="lazy"></a>
+  <div class="post-card-body">
+    {{ with index .Params.categories 0 }}<a class="eyebrow" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Description }}</p>
+  </div>
+</article>

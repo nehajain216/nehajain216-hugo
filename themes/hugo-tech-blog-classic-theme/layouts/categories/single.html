@@ -1,0 +1,8 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <main class="container categories-page">
+    <section><h2>Categories</h2><div class="term-grid">{{ range site.Taxonomies.categories.Alphabetical }}<article class="term-card"><h3>{{ .Page.Title }}</h3><p>{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</p><a href="{{ .Page.RelPermalink }}">View all {{ .Page.Title }} posts →</a></article>{{ end }}</div></section>
+    <section><h2>Tags</h2><div class="tag-list large">{{ range site.Taxonomies.tags.Alphabetical }}<a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ end }}</div></section>
+    <section><h2>Recent Posts</h2><div class="post-grid three">{{ range first 3 (where site.RegularPages "Section" "posts") }}{{ partial "post-card.html" . }}{{ end }}</div></section>
+  </main>
+{{ end }}

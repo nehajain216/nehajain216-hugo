@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $paginator := .Paginate $posts }}
+  <main class="container content-with-sidebar">
+    <section>
+      <div class="post-grid">{{ range $paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}</div>
+      {{ partial "pagination.html" . }}
+    </section>
+    {{ partial "sidebar.html" . }}
+  </main>
+{{ end }}

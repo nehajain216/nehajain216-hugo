@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <section class="hero compact"><div class="container"><h1>{{ .Title }}</h1><p>{{ .Date.Format "January 2, 2006" }} · {{ .Params.readTime }}</p></div></section>
+  <main class="container post-layout">
+    <article class="post-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "posts/" | relURL }}"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Posts</a><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page">{{ .Title }}</span></nav>
+      {{ with .Params.image }}<img class="post-image" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+      {{ with .Params.categories }}<p class="taxonomy">{{ range . }}<a href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</p>{{ end }}
+      {{ partial "social-share.html" . }}
+      {{ .Content }}
+      {{ with .Params.tags }}<div class="tag-list post-tags">{{ range . }}<a href="{{ printf "tags/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</div>{{ end }}
+      {{ partial "social-share.html" . }}
+    </article>
+    {{ partial "sidebar.html" . }}
+  </main>
+{{ end }}

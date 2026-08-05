@@ -1,9 +1,6 @@
-.project
-.settings
 .idea
-.iml
+*.iml
+public/
+build/
+resources/
 .hugo_build.lock
-public
-backup
-themes/tranquilpeak/exampleSite
-

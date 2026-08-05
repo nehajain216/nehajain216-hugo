@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+    {{ $styles := slice (resources.Get "css/styles.css") (resources.Get "css/chroma.css") | resources.Concat "css/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+    {{ $menuScript := resources.Get "js/menu.js" | minify | fingerprint }}
+    <script src="{{ $menuScript.RelPermalink }}" integrity="{{ $menuScript.Data.Integrity }}" crossorigin="anonymous"></script>
+  </body>
+</html>
