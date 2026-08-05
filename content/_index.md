@@ -1,4 +1,4 @@
 ---
-title: "Welcome to SivaLabs"
-description: "Exploring Java, Spring Boot, Microservices, and Cloud-Native technologies."
+title: "Welcome to Neha Tech Blog"
+description: "My learnings on software development, and testing."
 ---
