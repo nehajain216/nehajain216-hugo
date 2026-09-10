@@ -1,6 +1,6 @@
 ---
 title: "Different Approaches to Data-Driven Testing"
-date: 2026-10-10
+date: 2026-09-10
 description: "Compare common approaches to data-driven testing and learn when each one is most useful."
 categories: ["QA"]
 tags: ["QA", "Testing", "Data-Driven Testing", "Automation"]
